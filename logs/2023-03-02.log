@@ -1,0 +1,23 @@
+[2023-03-02 10:13:08.224] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 10:13:18.790] [Logger] [warning] [HistoryOrders.cpp:24] HistoryOrders ： The passed argument does not exist
+[2023-03-02 10:13:18.790] [Logger] [error] [HttpErrMsg.cpp:16] err : Param handle erro,  cmd = historyOrders
+[2023-03-02 10:14:23.313] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 10:14:30.407] [Logger] [info] [HistoryOrders.cpp:52] HistoryOrders::get_request_body json_result : {"id":1,"method":"order.history","params":[194790,"",1677637100,1677637669,0,100]}
+[2023-03-02 10:14:30.567] [Logger] [info] [HistoryOrders.cpp:57] HistoryOrders::deal json_body : %s
+
+[2023-03-02 10:28:01.795] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 10:31:54.657] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 10:48:09.302] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 10:48:28.909] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-02 10:52:25.087] [Logger] [info] [Server.cpp:39] Cannot start server
+[2023-03-02 10:52:30.653] [Logger] [info] [Server.cpp:39] Cannot start server
+[2023-03-02 10:52:41.519] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 10:52:58.425] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-02 10:53:14.972] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-02 10:53:16.276] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-02 13:59:14.658] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 14:14:15.469] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 14:15:05.876] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 14:16:53.605] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 14:18:11.099] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-02 14:21:13.442] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888

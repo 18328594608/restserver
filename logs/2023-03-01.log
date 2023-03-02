@@ -1,0 +1,24 @@
+[2023-03-01 16:30:47.997] [Logger] [info] [main.cpp:13] This is an info message
+[2023-03-01 16:30:47.997] [Logger] [warning] [main.cpp:14] This is a warn message
+[2023-03-01 16:30:47.997] [Logger] [error] [main.cpp:15] This is an error message
+[2023-03-01 16:30:47.997] [Logger] [critical] [main.cpp:16] This is a critical message
+[2023-03-01 16:52:37.688] [Logger] [info] [main.cpp:13] This is an info message
+[2023-03-01 16:52:37.688] [Logger] [warning] [main.cpp:14] This is a warn message
+[2023-03-01 16:52:37.688] [Logger] [error] [main.cpp:15] This is an error message
+[2023-03-01 16:52:37.688] [Logger] [critical] [main.cpp:16] This is a critical message
+[2023-03-01 16:52:41.673] [Logger] [info] [HistoryOrders.cpp:44] HistoryOrders::get_request_body json_result : %s
+
+[2023-03-01 16:52:57.404] [Logger] [info] [main.cpp:13] This is an info message
+[2023-03-01 16:52:57.404] [Logger] [warning] [main.cpp:14] This is a warn message
+[2023-03-01 16:52:57.404] [Logger] [error] [main.cpp:15] This is an error message
+[2023-03-01 16:52:57.404] [Logger] [critical] [main.cpp:16] This is a critical message
+[2023-03-01 16:54:52.911] [Logger] [info] [main.cpp:13] This is an info message
+[2023-03-01 16:54:52.911] [Logger] [warning] [main.cpp:14] This is a warn message
+[2023-03-01 16:54:52.911] [Logger] [error] [main.cpp:15] This is an error message
+[2023-03-01 16:54:52.911] [Logger] [critical] [main.cpp:16] This is a critical message
+[2023-03-01 16:55:02.342] [Logger] [info] [HistoryOrders.cpp:44] HistoryOrders::get_request_body json_result : {"id":1,"method":"order.history","params":[194790,"",1677637100,1677637669,0,100]}
+[2023-03-01 17:01:57.470] [Logger] [info] [main.cpp:13] This is an info message
+[2023-03-01 17:01:57.470] [Logger] [warning] [main.cpp:14] This is a warn message
+[2023-03-01 17:01:57.470] [Logger] [error] [main.cpp:15] This is an error message
+[2023-03-01 17:01:57.470] [Logger] [critical] [main.cpp:16] This is a critical message
+[2023-03-01 17:02:03.498] [Logger] [info] [HistoryOrders.cpp:44] HistoryOrders::get_request_body json_result : {"id":1,"method":"order.history","params":[194790,"",1677637100,1677637669,0,100]}
