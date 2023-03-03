@@ -1,0 +1,12 @@
+/home/parallels/workspace/restserver/CMakeFiles/rsetserver.dir
+/home/parallels/workspace/restserver/CMakeFiles/edit_cache.dir
+/home/parallels/workspace/restserver/CMakeFiles/rebuild_cache.dir
+/home/parallels/workspace/restserver/http/CMakeFiles/http.dir
+/home/parallels/workspace/restserver/http/CMakeFiles/edit_cache.dir
+/home/parallels/workspace/restserver/http/CMakeFiles/rebuild_cache.dir
+/home/parallels/workspace/restserver/protocol/CMakeFiles/protocol.dir
+/home/parallels/workspace/restserver/protocol/CMakeFiles/edit_cache.dir
+/home/parallels/workspace/restserver/protocol/CMakeFiles/rebuild_cache.dir
+/home/parallels/workspace/restserver/base/CMakeFiles/base.dir
+/home/parallels/workspace/restserver/base/CMakeFiles/edit_cache.dir
+/home/parallels/workspace/restserver/base/CMakeFiles/rebuild_cache.dir

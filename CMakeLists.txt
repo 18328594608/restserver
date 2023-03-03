@@ -3,11 +3,6 @@ project(rsetserver)
 set(CMAKE_CXX_STANDARD 17)
 
 
-set(OPENSSL_INCLUDE_DIR /opt/homebrew/opt/openssl@3/include)
-set(OPENSSL_CRYPTO_LIBRARY /opt/homebrew/opt/openssl@3/lib/libcrypto.dylib)
-set(OPENSSL_SSL_LIBRARY /opt/homebrew/opt/openssl@3/lib/libssl.dylib)
-set(ZLIB_INCLUDE_DIR /opt/homebrew/opt/zlib/include)
-
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
 #set(WORKFLOW_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/_include/workflow)
 #set(WORKFLOW_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/_lib)
@@ -22,17 +17,19 @@ set(WORKFLOW_LIB_DIR ${PROJECT_SOURCE_DIR}/_lib)
 set(WFRSET_LIB_DIR ${PROJECT_SOURCE_DIR}/_lib/wfrest)
 
 if(ANDROID)
-    link_directories(${OPENSSL_LINK_DIR})
+	link_directories(${OPENSSL_LINK_DIR})
 else()
-    find_library(LIBRT rt)
-    find_package(OpenSSL REQUIRED)
+	find_library(LIBRT rt)
+	find_package(OpenSSL REQUIRED)
 endif()
 
-
-find_package(workflow REQUIRED CONFIG HINTS ..)
-find_package(wfrest REQUIRED CONFIG HINTS ..)
 find_package(ZLIB REQUIRED)
 
+if(OPENSSL_FOUND)
+    message("Found OpenSSL library: ${OPENSSL_INCLUDE_DIR}")
+else()
+    message(FATAL_ERROR "Could not find OpenSSL library.")
+endif()
 
 include_directories(${OPENSSL_INCLUDE_DIR} ${ZLIB_INCLUDE_DIR}
         ${WORKFLOW_INCLUDE_DIR} ${WFREST_INCLUDE_DIR}
@@ -49,9 +46,11 @@ add_subdirectory(base)
 
 add_executable(rsetserver main.cpp)
 target_link_libraries(rsetserver PRIVATE
-        ZLIB::ZLIB
-        libworkflow.a
+   
         libwfrest.a
+        libworkflow.a
+        OpenSSL::SSL OpenSSL::Crypto
+        ZLIB::ZLIB
         http
         protocol
         base)

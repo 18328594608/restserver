@@ -1,0 +1,34 @@
+[2023-03-03 14:16:15.291] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-03 14:16:30.609] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-03 14:23:33.683] [Logger] [info] [Server.cpp:34] Server Start Success port = 8888
+[2023-03-03 14:23:59.500] [Logger] [error] [HttpErrMsg.cpp:16] err : http://35.229.196.29:8080 : Fetch failed. state = 1, error = 110 Connection timed out,  cmd = userInfo
+[2023-03-03 14:35:37.088] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":194790,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":-300,"comment":""}
+[2023-03-03 14:35:37.089] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[194790,"-300",""]}
+[2023-03-03 14:35:37.200] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-03 14:35:38.836] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":194790,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":-300,"comment":""}
+[2023-03-03 14:35:38.836] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[194790,"-300",""]}
+[2023-03-03 14:35:38.947] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-03 14:35:39.868] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":194790,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":-300,"comment":""}
+[2023-03-03 14:35:39.868] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[194790,"-300",""]}
+[2023-03-03 14:35:39.979] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-03 14:35:40.786] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":194790,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":-300,"comment":""}
+[2023-03-03 14:35:40.786] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[194790,"-300",""]}
+[2023-03-03 14:35:40.900] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-03 14:36:02.715] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":194790,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":-300,"comment":""}
+[2023-03-03 14:36:02.715] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[194790,"-300",""]}
+[2023-03-03 14:36:02.829] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-03 14:36:03.526] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":194790,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":-300,"comment":""}
+[2023-03-03 14:36:03.526] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[194790,"-300",""]}
+[2023-03-03 14:36:03.639] [Logger] [error] [HttpErrMsg.cpp:16] err : balance not enough,  cmd = depositChange
+[2023-03-03 14:36:07.319] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":194790,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":300,"comment":""}
+[2023-03-03 14:36:07.319] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[194790,"300",""]}
+[2023-03-03 14:36:07.432] [Logger] [info] [DepositChange.cpp:51] DepositChange::deal response body : {"error":null,"result":{"status":"success"},"id":1} 
+[2023-03-03 14:36:08.318] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":194790,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":300,"comment":""}
+[2023-03-03 14:36:08.318] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[194790,"300",""]}
+[2023-03-03 14:36:08.429] [Logger] [info] [DepositChange.cpp:51] DepositChange::deal response body : {"error":null,"result":{"status":"success"},"id":1} 
+[2023-03-03 14:36:11.545] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":19479,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":300,"comment":""}
+[2023-03-03 14:36:11.545] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[19479,"300",""]}
+[2023-03-03 14:36:11.658] [Logger] [info] [DepositChange.cpp:51] DepositChange::deal response body : {"error":null,"result":{"status":"success"},"id":1} 
+[2023-03-03 14:36:12.378] [Logger] [info] [DepositChange.cpp:23] DepositChange :Received arguments ：{"login":19479,"token":"CC835BB6-D211112C03A568C6-4A60000014539CE0","price":300,"comment":""}
+[2023-03-03 14:36:12.378] [Logger] [info] [DepositChange.cpp:46] DepositChange::request_body : {"id":1,"method":"balance.update","params":[19479,"300",""]}
+[2023-03-03 14:36:12.496] [Logger] [info] [DepositChange.cpp:51] DepositChange::deal response body : {"error":null,"result":{"status":"success"},"id":1} 
