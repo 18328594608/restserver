@@ -40,9 +40,6 @@ else()
 endif()
 
 find_package(ZLIB REQUIRED)
-#boost
-find_package(Boost REQUIRED COMPONENTS system thread)
-include_directories(${Boost_INCLUDE_DIRS})
 
 include_directories(${OPENSSL_INCLUDE_DIR} ${ZLIB_INCLUDE_DIR}
         ${WORKFLOW_INCLUDE_DIR} ${WFREST_INCLUDE_DIR}
@@ -58,9 +55,9 @@ add_subdirectory(base)
 #include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 add_executable(rsetserver main.cpp)
 if (APPLE)
-    set(LINK_LIB ZLIB::ZLIB wfrest workflow  ${Boost_LIBRARIES}    http protocol base)
+    set(LINK_LIB ZLIB::ZLIB wfrest workflow  http protocol base)
 else ()
-    set(LINK_LIB wfrest workflow   ${Boost_LIBRARIES}   ZLIB::ZLIB http protocol base)
+    set(LINK_LIB wfrest workflow  ZLIB::ZLIB http protocol base)
 endif ()
 
 target_link_libraries(rsetserver PRIVATE
