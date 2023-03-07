@@ -30,7 +30,7 @@ endif()
 
 find_package(wfrest REQUIRED CONFIG HINTS .)
 if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/workflow/workflow-config.cmake.in")
-    find_package(Workflow REQUIRED CONFIG HINTS ./wfrest/workflow)
+    find_package(workflow REQUIRED CONFIG HINTS ./wfrest/workflow)
 endif ()
 
 if (wfrest_FOUND)
