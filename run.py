@@ -24,4 +24,4 @@ while True:
             break
 
         # 每隔一段时间检查一次服务状态
-        time.sleep(10)
+        time.sleep(3)

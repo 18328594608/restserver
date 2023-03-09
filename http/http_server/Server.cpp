@@ -31,7 +31,8 @@ int Server::start() {
 
     if (svr.start(8888) == 0)
     {
-        LOG_INFO("Server Start Success port = 8888");
+        LOG_DEBUG("Server Start Success port = 8888");
+        printf("输入回车键进行退出");
         getchar();
         svr.stop();
     } else

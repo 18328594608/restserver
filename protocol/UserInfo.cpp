@@ -6,6 +6,7 @@
 #include "../http/http_client/HttpClient.h"
 #include "workflow/HttpMessage.h"
 #include "Log.h"
+#include "Config.h"
 
 UserInfo::UserInfo() {
 
@@ -42,7 +43,7 @@ void UserInfo::proxy_http_callback(WFHttpTask *http_task) {
 
 void UserInfo::get_request_body(std::string& str_body){
     Json  body;
-    body["id"] = 1;
+    body["id"] = ConfigManager::getInstance().getRequesID();
     body["method"] = "balance.query";
     Json::Array json_array;
     for (unsigned i = 0; i < m_logins.size(); i++)
@@ -78,13 +79,13 @@ Json UserInfo::deal(const void *body, size_t len) {
     userInfo["agent_account"] = 0;
     userInfo["credit"] = 0.00;
 
-    marginInfo["balance"] = std::stod(balance);
+    marginInfo["balance"] = balance;
     marginInfo["leverage"] = 0;
     marginInfo["updated"] = 0;
-    marginInfo["equity"] = std::stod(equity);
+    marginInfo["equity"] = equity;
     marginInfo["volume"] = 0;
-    marginInfo["margin"] = std::stod(margin);
-    marginInfo["margin_free"] = std::stod(margin_free);
+    marginInfo["margin"] = margin;
+    marginInfo["margin_free"] = margin_free;
     marginInfo["margin_level"] = 0.00;
     marginInfo["margin_type"] = 0;
     marginInfo["level_type"] = 0;

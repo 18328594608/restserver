@@ -4,6 +4,7 @@
 
 #include "DepositChange.h"
 #include "Log.h"
+#include "Config.h"
 
 DepositChange::DepositChange()
 {
@@ -34,7 +35,7 @@ void DepositChange::proxy_http_callback(WFHttpTask *http_task) {
 
 void DepositChange::get_request_body(std::string &str_body) {
     Json  body;
-    body["id"] = 1;
+    body["id"] = ConfigManager::getInstance().getRequesID();
     body["method"] = "balance.update";
 
     Json params;

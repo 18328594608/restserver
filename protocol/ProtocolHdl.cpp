@@ -10,6 +10,7 @@
 #include "HistoryOrders.h"
 #include "HttpErrMsg.h"
 #include "Log.h"
+#include "Config.h"
 
 std::shared_ptr<BaseProtocol> ProtocolFactory::create(const std::string &type) {
     {
@@ -47,8 +48,9 @@ void ProtocolHdl::handle_cmd_http_request(const HttpReq *req, HttpResp *resp) {
         {
             HttpClient *server_req_cast = static_cast<HttpClient *>(resp);
 
+            const std::string url = ConfigManager::getInstance().getNewworkIo();
             //发送http请求
-            server_req_cast->Http("http://35.229.196.29:8080", factory);
+            server_req_cast->Http(url, factory);
         } else
         {
             HttpErrMsg *err_cast = static_cast<HttpErrMsg *>(resp);

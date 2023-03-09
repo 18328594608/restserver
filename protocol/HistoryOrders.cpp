@@ -4,6 +4,8 @@
 
 #include "HistoryOrders.h"
 #include "Log.h"
+#include <cmath>
+#include "Config.h"
 
 HistoryOrders::HistoryOrders() {
      m_offset = 0;
@@ -36,7 +38,7 @@ bool HistoryOrders::handle(Json json_data) {
 
 void HistoryOrders::get_request_body(std::string &str_body) {
     Json  body;
-    body["id"] = 1;
+    body["id"] = ConfigManager::getInstance().getRequesID();
     body["method"] = "order.history";
 
     Json params;
@@ -69,20 +71,28 @@ Json HistoryOrders::deal(const void *body, size_t len) {
 
             std::string str_lot = json_record["lot"].get<std::string>();
             double d_lot = atof(str_lot.c_str()) * 100;
+            double open_time = json_record["create_time"].get<double>();
             double close_time = json_record["finish_time"].get<double>();
+
+            int fee = std::stoi(json_record["fee"].get<std::string>());
+            std::string str_fee = fee > 0 ? std::to_string(-fee) : "0";
+
+            int swap = std::stoi(json_record["swaps"].get<std::string>());
+            std::string str_swap = fee > 0 ? std::to_string(-swap) : "0";
 
             jsonRecord["order"] = json_record["id"].get<int>();
             jsonRecord["symbol"] = json_record["symbol"].get<std::string>();
             jsonRecord["type"] = json_record["side"].get<int>();
             jsonRecord["volume"] = d_lot;
-            jsonRecord["open_time"] = json_record["create_time"].get<double>();
+            jsonRecord["open_time"] = round(open_time);
             jsonRecord["open_price"] = json_record["price"].get<std::string>();
             jsonRecord["sl"] = json_record["sl"].get<std::string>();
             jsonRecord["tp"] = json_record["tp"].get<std::string>();
             jsonRecord["close_price"] = json_record["close_price"].get<std::string>();
-            jsonRecord["close_time"] = static_cast<double>(close_time);
-            jsonRecord["commission"] = json_record["fee"].get<std::string>();
-            jsonRecord["swap"] =  json_record["swaps"].get<std::string>();
+            jsonRecord["close_time"] = round(close_time);
+
+            jsonRecord["commission"] =  str_fee;         //gas
+            jsonRecord["swap"] =   str_swap;          //隔夜费
             jsonRecord["profit"] = json_record["profit"].get<std::string>();
             jsonRecord["comment"] = json_record["comment"].get<std::string>();
             rsp_data.push_back(jsonRecord);

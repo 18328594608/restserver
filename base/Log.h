@@ -5,6 +5,7 @@
 #ifndef RSETSERVER_LOG_H
 #define RSETSERVER_LOG_H
 
+#define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_TRACE//必须定义这个宏,才能输出文件名和行号
 
 #include <iostream>
 #include <memory>
@@ -12,6 +13,7 @@
 #include <spdlog/sinks/daily_file_sink.h>
 #include "spdlog/sinks/rotating_file_sink.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include <map>
 
 // 定义日志级别
 enum LogLevel {
@@ -31,27 +33,52 @@ public:
         return instance;
     }
 
+    LogLevel stringLogLevel(const std::string& levelString) {
+        static const std::map<std::string, LogLevel> levelMap = {
+                {"trace", LogLevel::TRACE},
+                {"debug", LogLevel::DEBUG},
+                {"info", LogLevel::INFO},
+                {"warn", LogLevel::WARN},
+                {"error", LogLevel::ERROR},
+                {"critical", LogLevel::CRITICAL}
+        };
+
+        std::string lowercaseLevelString = levelString;
+        std::transform(lowercaseLevelString.begin(), lowercaseLevelString.end(), lowercaseLevelString.begin(), [](unsigned char c) { return std::tolower(c); });
+
+        auto it = levelMap.find(lowercaseLevelString);
+        if (it == levelMap.end()) {
+            throw std::invalid_argument("Invalid log level string: " + levelString);
+        }
+        return it->second;
+    }
+
     // 设置日志级别
     void setLevel(LogLevel level) {
         switch (level) {
             case TRACE:
                 logger_->set_level(spdlog::level::trace);
-                logger_->flush_on(spdlog::level::trace);
+                console_->set_level(spdlog::level::trace);
                 break;
             case DEBUG:
                 logger_->set_level(spdlog::level::debug);
+                console_->set_level(spdlog::level::debug);
                 break;
             case INFO:
                 logger_->set_level(spdlog::level::info);
+                console_->set_level(spdlog::level::info);
                 break;
             case WARN:
                 logger_->set_level(spdlog::level::warn);
+                console_->set_level(spdlog::level::warn);
                 break;
             case ERROR:
                 logger_->set_level(spdlog::level::err);
+                console_->set_level(spdlog::level::err);
                 break;
             case CRITICAL:
                 logger_->set_level(spdlog::level::critical);
+                console_->set_level(spdlog::level::critical);
                 break;
         }
     }
@@ -70,7 +97,7 @@ private:
         // 初始化日志对象
         std::string log_filename = "logs/" + getLogFilename();
         logger_ = spdlog::rotating_logger_mt("Logger", log_filename.c_str(), 1024 * 1024 * 20, 50);
-        logger_->flush_on(spdlog::level::info);
+        logger_->flush_on(spdlog::level::trace);
         console_ = spdlog::stdout_color_mt("console");
     }
 
