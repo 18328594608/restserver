@@ -5,6 +5,9 @@
 #include <mutex>
 #include <list>
 #include "../common/pool/Pool.h"
+#include <atomic>
+#include <condition_variable>
+
 
 #define MAXTHREADSIZE 32
 #define Instance(T) (CServer::instance<T>())
