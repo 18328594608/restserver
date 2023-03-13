@@ -5,7 +5,6 @@
 #include <iostream>
 #include "http/http_server/Server.h"
 #include "base/Log.h"
-
 int main()
 {
     try {
