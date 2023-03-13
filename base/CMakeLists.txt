@@ -14,5 +14,12 @@ set(SRC
         Config.cpp
         )
 
-add_library(${PROJECT_NAME} OBJECT ${SRC})
+add_library(
+        ${PROJECT_NAME} STATIC
+        $<TARGET_OBJECTS:common>
+        $<TARGET_OBJECTS:msg>
+        $<TARGET_OBJECTS:tool>
+        $<TARGET_OBJECTS:server>
+        ${SRC}
+)
 

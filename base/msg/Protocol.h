@@ -1,8 +1,8 @@
 #pragma once
 #include "Msg.h"
-#include "..\common\jsoncpp\jsonRead.h"
-#include "base\msg\RspMsg.h"
-#include "base/common/log/log.h"
+#include "wfrest/Json.h"
+#include "msg/RspMsg.h"
+#include "Log.h"
 class CProtocol :
 	public CMsg
 {
@@ -11,8 +11,8 @@ public:
 	virtual ~CProtocol();
 	CRspMsgPtr todo(void* pParam);
 
-	void setReqJson(JsonPtr spJson) { 
-		FUNLOG;
+	void setReqJson(JsonPtr spJson) {
+
 		_m_spReqJson = spJson; }
 	JsonPtr getReqJson() {
 		FUNLOG;

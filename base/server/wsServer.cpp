@@ -22,8 +22,8 @@ CWsServer::CWsServer()
 	__m_websocktServer.set_fail_handler(bind(&CWsServer::onFail, this, ::_1));
 	__m_websocktServer.set_message_handler(bind(&CWsServer::onMessage, this, ::_1, ::_2));
 	__m_websocktServer.set_http_handler(bind(&CWsServer::onHttp, this, ::_1));
-	__m_websocktServer.set_socket_init_handler(bind(&CWsServer::onSocketInit, this, ::_1, ::_2));
-	__m_websocktServer.set_pong_handler(bind(&CWsServer::onPong, this, ::_1, ::_2));
+    __m_websocktServer.set_socket_init_handler(bind(&CWsServer::onSocketInit, this, ::_1, ::_2));
+    __m_websocktServer.set_pong_handler(bind(&CWsServer::onPong, this, ::_1, ::_2));
 }
 
 
@@ -119,7 +119,6 @@ void CWsServer::_maintain()
 		{
 			LOG_ERROR("{},{}|[{}|{}]", __FUNCTION__, e.what(),it.first.get(),it.second.getLogin());
 
-			//socket������ʧЧ������kill���������������Ϣ
 			killWsConn(it.first);
 			gWsAdmin.pull(it.first);
 		}
@@ -168,7 +167,7 @@ void CWsServer::onHttp(connection_hdl hdl)
 void CWsServer::onSocketInit(connection_hdl, boost::asio::ip::tcp::socket & s)
 {
     boost::asio::ip::tcp::no_delay option(true);
-	s.set_option(option);
+    s.set_option(option);
 }
 
 void CWsServer::onPong(connection_hdl hdl, std::string pangStr)

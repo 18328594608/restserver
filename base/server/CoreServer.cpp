@@ -1,5 +1,5 @@
 #include "CoreServer.h"
-#include "msg/Protocol.h"
+//#include "msg/Protocol.h"
 #include "common/proxy/Proxy.h"
 CCoreServer::CCoreServer()
 {
@@ -17,7 +17,7 @@ bool CCoreServer::_init()
 
 void CCoreServer::_run(void * param, int nPos)
 {
-	CProtocolPtr spProto = std::dynamic_pointer_cast<CProtocol>(_msgPop(nPos));
+	/*CProtocolPtr spProto = std::dynamic_pointer_cast<CProtocol>(_msgPop(nPos));
 	if (!spProto)
 	{
 		return;
@@ -25,7 +25,7 @@ void CCoreServer::_run(void * param, int nPos)
 
 	CRspMsgPtr spRspMsg = spProto->todo(this);
 
-	_sendMsg(std::static_pointer_cast<CMsg>(spRspMsg));
+	_sendMsg(std::static_pointer_cast<CMsg>(spRspMsg));*/
 }
 
 void CCoreServer::_pre_end()

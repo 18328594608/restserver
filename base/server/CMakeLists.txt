@@ -5,6 +5,7 @@ set(SRC
         CoreServer.cpp
         Server.cpp
         wsServer.cpp
+        PraseServer.cpp
         )
 
 add_library(${PROJECT_NAME} OBJECT ${SRC})

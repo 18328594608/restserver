@@ -1,5 +1,5 @@
 #include "Protocol.h"
-#include "base/common/log/log.h"
+#include "Log.h"
 #include "admin\WsAdmin.h"
 #include "base/common/tool\Tool.h"
 CProtocol::CProtocol():_m_bEcho(false),_m_sendtoClient(true)
@@ -15,7 +15,7 @@ CRspMsgPtr CProtocol::todo(void* pParam)
 {
 	FUNLOG;
 	deal(pParam);
-	//×é°üÒ»¸öJSOn
+	//ï¿½ï¿½ï¿½Ò»ï¿½ï¿½JSOn
 	Json::Value rspValue;
 	Json::FastWriter writer;
 	std::string rsp;
