@@ -23,10 +23,9 @@ void CPraseServer::_run(void * param, int nPos)
 	{
 		return;
 	}
-	//�������������msg����ȡcmd��������Ӧ�Ľӿ�Э�����
+
 	//CProtocolHdl ptclHdl(spMsg);
 	//CProtocolPtr pctl = ptclHdl.handle();
-
 	//_sendMsg(std::static_pointer_cast<CMsg>(pctl));
 }
 

@@ -37,6 +37,7 @@ find_package(ZLIB REQUIRED)
 include_directories(${OPENSSL_INCLUDE_DIR} ${ZLIB_INCLUDE_DIR}
         ${WORKFLOW_INCLUDE_DIR} ${WFREST_INCLUDE_DIR}
         ${BASS_LOG_DIR})
+
 include_directories(${THIRD_LIB_DIR})
 link_directories(${WFREST_LIB_DIR} ${WORKFLOW_LIB_DIR})
 
@@ -51,12 +52,10 @@ if (WEBSOCKETPP_FOUND)
     message("---------------- ${WEBSOCKETPP_INCLUDE_DIR}")
 endif ()
 
+add_subdirectory(base)
 add_subdirectory(http)
 add_subdirectory(protocol)
-add_subdirectory(base)
 add_subdirectory(websocketpp)
-
-
 
 include_directories(${WEBSOCKETPP_INCLUDE_DIR})
 

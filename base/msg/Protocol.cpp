@@ -13,9 +13,7 @@ CProtocol::~CProtocol()
 
 CRspMsgPtr CProtocol::todo(void* pParam)
 {
-	FUNLOG;
 	deal(pParam);
-	//���һ��JSOn
 	Json::Value rspValue;
 	Json::FastWriter writer;
 	std::string rsp;
@@ -50,7 +48,6 @@ CRspMsgPtr CProtocol::todo(void* pParam)
 
 bool CProtocol::_tokenIsValid(std::string token)
 {
-	FUNLOG;
 	std::string hex16 =token.substr(17, 8);
 	int login = strtol(hex16.c_str(), NULL, 16);
 	return verifyToken(token, login);

@@ -4,7 +4,7 @@
 #include "../msg/Msg.h"
 #include <mutex>
 #include <list>
-#include "../common/pool/Pool.h"
+#include "common/pool/Pool.h"
 #include <atomic>
 #include <condition_variable>
 

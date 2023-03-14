@@ -8,6 +8,7 @@
 #include "base/server/Server.h"
 #include "base/server/CoreServer.h"
 #include "base/server/wsServer.h"
+#include "base/server/PraseServer.h"
 int main()
 {
     try {
@@ -19,6 +20,7 @@ int main()
     }
     LogLevel level =  Logger::getInstance().stringLogLevel(ConfigManager::getInstance().getLogLevel());
     Logger::getInstance().setLevel(level);
+    Instance(CPraseServer)->start(8);
     Instance(CCoreServer)->start(16);
     Instance(CWsServer)->start(8);
     return 0;

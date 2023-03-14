@@ -83,7 +83,6 @@ void CServer::__go(void* param, int nTreadPos)
     {
         _run(param, nTreadPos);
 
-        // ??????????????pthread_cond_signal??????????????
         struct timespec abstime;
         clock_gettime(CLOCK_REALTIME, &abstime);
         abstime.tv_sec += 1;

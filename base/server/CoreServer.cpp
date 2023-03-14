@@ -30,6 +30,7 @@ void CCoreServer::_run(void * param, int nPos)
 
 void CCoreServer::_pre_end()
 {
+
 }
 
 void CCoreServer::_end()

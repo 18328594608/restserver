@@ -1,10 +1,8 @@
 #pragma once
 #include <string>
 #include <memory>
-#include "wfrest/Json.h"
 typedef std::weak_ptr<void> websocket_hdl;
 typedef std::shared_ptr<void> websocket_spHdl;
-using namespace wfrest;
 enum msg_errcode
 {
 	ok = 0,
@@ -52,15 +50,12 @@ public:
 	void setLogPrint(bool bLogPrint) {  _m_logPrint = bLogPrint; }
 	bool getLogPrint() {  return _m_logPrint; }
 
-	void setJson(Json::Object json) { _m_json = json; }
-    Json::Object getJson() {  return _m_json; }
 protected:
 	std::string _m_msg;
 	int _m_code;
 	std::string _m_uuid;
 	websocket_hdl _m_hdl;
 	bool _m_logPrint;
-	Json _m_json;
 };
 
 typedef std::shared_ptr<CMsg> CMsgPtr;

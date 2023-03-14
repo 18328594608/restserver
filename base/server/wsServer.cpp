@@ -166,12 +166,16 @@ void CWsServer::onHttp(connection_hdl hdl)
 
 void CWsServer::onSocketInit(connection_hdl, boost::asio::ip::tcp::socket & s)
 {
-    boost::asio::ip::tcp::no_delay option(true);
-    s.set_option(option);
+    if(s.is_open())
+    {
+        boost::asio::ip::tcp::no_delay option(true);
+        s.set_option(option);
+    }
 }
 
 void CWsServer::onPong(connection_hdl hdl, std::string pangStr)
 {
+
 }
 
 void CWsServer::killWsConn(connection_hdl hdl)
